@@ -9,22 +9,25 @@
 
     <div>
         <label for="phone">Telefone:</label>
-        <input type="text" id="phone" name="phone"><br><br>
+        <input type="text" id="phone" name="phone">
         <button type="button" onclick="redirectWhatsapp()">Whatsapp</button>
     </div>
 
     <script>
-        function redirectWhatsapp()
-        {
+        function redirectWhatsapp() {
             var baseLink = "https://web.whatsapp.com/send?phone=";
-            
+
             let phone = document.getElementById("phone").value;
-            phone = phone.replace(/\(|\)|\ |-|\./g, "");
 
-            if (!phone.startsWith("55"))
-                phone = "55" + phone;
+            if (phone != "") {
 
-            window.location.href = baseLink + phone;         
+                phone = phone.replace(/\(|\)|\ |-|\./g, "");
+
+                if (!phone.startsWith("55"))
+                    phone = "55" + phone;
+
+                window.location.href = baseLink + phone;
+            }
         }
     </script>
 </body>
