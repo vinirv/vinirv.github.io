@@ -21,9 +21,12 @@
 
             if (phone != "") {
 
-                phone = phone.replace(/\(|\)|\ |-|\./g, "");
+                phone = phone.replace(/\D/g, "");
 
-                if (!phone.startsWith("55"))
+                if (phone.length < 10) // Sem DDD
+                    phone = "67" + phone;
+
+                if (phone.length < 12) // Sem DDI
                     phone = "55" + phone;
 
                 window.location.href = baseLink + phone;
