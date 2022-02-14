@@ -1,3 +1,30 @@
-<h1>
-    Hello World!
-</h1>
+<head>
+    <title>Whatsapp sem adicionar contato</title>
+</head>
+
+<body>
+    <h1>
+        Whatsapp sem adicionar contato
+    </h1>
+
+    <div>
+        <label for="phone">Telefone:</label>
+        <input type="text" id="phone" name="phone"><br><br>
+        <button type="button" onclick="redirectWhatsapp()">Whatsapp</button>
+    </div>
+
+    <script>
+        function redirectWhatsapp()
+        {
+            var baseLink = "https://web.whatsapp.com/send?phone=";
+            
+            let phone = document.getElementById("phone").value;
+            phone = phone.replace(/\(|\)|\ |-|\./g, "");
+
+            if (!phone.startsWith("55"))
+                phone = "55" + phone;
+
+            window.location.href = baseLink + phone;         
+        }
+    </script>
+</body>
