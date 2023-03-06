@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Gráfico para Cálculo do Esforço das Tarefas</title>
+	<link rel="stylesheet" href="jquery-ui.css">
+	<link rel="stylesheet" href="style.css">	
+	<script src="jquery-1.12.4.js"></script>
+	<script src="jquery-ui.js"></script>
+	<script src="script.js"></script>	
+</head>
+<body>
+	<h2>Gráfico para Cálculo do Esforço das Tarefas Scrum</h2>
+	<div style="margin-top: 10px;">
+		<div id="grafico">
+			<div style="display: -webkit-box;">
+				<div id="slider-complex" style="height:300px;"></div>
+				<div id="div-esforco" style=""></div>
+			</div>
+			<div id="slider-tempo" style=""></div> 
+		</div>
+		<br>
+		<p>
+			<label for="amount">Tempo:</label>
+			<input type="text" id="valor-tamanho" value="0">
+		</p>
+		<p>
+			<label for="amount">Complexidade:</label>
+			<input type="text" id="valor-complexidade" value="0">
+		</p>
+		<p>
+			<label for="amount">Esforço:</label>
+			<input type="text" id="valor-esforco" readonly value="0 (0.0)">
+		</p>		
+		<!-- <p>
+			<label for="amount">x1:</label>
+			<input type="text" id="x1" readonly>
+		</p>
+		<p>
+			<label for="amount">y1:</label>
+			<input type="text" id="y1" readonly >
+		</p>
+		<p>
+			<label for="amount">x2:</label>
+			<input type="text" id="x2" readonly >
+		</p>
+		<p>
+			<label for="amount">y2:</label>
+			<input type="text" id="y2" readonly >
+		</p> -->
+	</div>
+<hr>
+<h3>Configurações</h3>
+<p>
+	<label for="amount">Esforço Máximo:</label>
+	<input type="text" id="valor-max-esf" value="13">
+</p>
+<p>
+	<label for="amount">Tamanho Sprint (Dias úteis):</label>
+	<input type="text" id="dias-sprint" value="10">
+</p>
+<p>
+	<label for="amount">Complexidade máxima:</label>
+	<input type="text" id="complex-max" value="5">
+</p>
+<p>
+	<label for="amount">Influência Tempo:</label>
+	<input type="text" id="peso-tempo" value="1">
+</p>
+<p>
+	<label for="amount">Influência Complexidade:</label>
+	<input type="text" id="peso-complex" value="1">
+</p>
+<style>
+		div.line{
+			transform-origin: 0 100%;
+			height: 3px; /* Line width of 3 */
+			background: #000; /* Black fill */
+		}
+		#div-esforco{
+			min-width: 300px;
+			max-width: 580px;
+			width: 50%; 
+			height:300px; 
+			border: 1px black solid; 
+			margin-left: 15px
+		}    
+		#slider-tempo {
+			min-width: 300px;
+			max-width: 580px;
+			width:50%; 
+			margin-left: 30px; 
+			margin-top: 15px;
+		}
+		input {
+			border:0; 
+			color:#f6931f; 
+			font-weight:bold;
+			width: 50px;
+		}
+	</style>
+</body>
+</html>
